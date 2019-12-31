@@ -1,0 +1,26 @@
+.main {
+    height: 90vh;
+    width: 100vw;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 60px / repeat(3, 1fr);
+    grid-template-areas: 'children children children'
+                         'children children children'
+                         'children children children'
+                         'pie pie pie';
+    background: rgba(236, 236, 236, 0.897)
+}
+
+.navbar {
+    grid-area: navbar
+}
+
+.children {
+    grid-area: children;
+    display: grid;
+    justify-content: center;
+    align-items: center
+}
+
+.pie {
+    grid-area: pie;
+}

@@ -1,0 +1,33 @@
+.login-container {
+    box-shadow: 1px 1px 1px 1px grey;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center
+}
+
+.login-container img {
+    width: 150px;
+    border-radius: 10px;
+    margin: 20px
+}
+
+.tipo-parlapp {
+    width: 50px
+}
+
+.form-check-label {
+    font-size: 0.8em;
+}
+
+.form-check {
+    display: grid;
+    justify-content: center
+}
+
+.btn-primary {
+    background-color: rgb(77, 189, 152) !important;
+}
+
+.btn-primary:hover {
+    background-color: rgba(77, 189, 152, 0.623) !important;
+}
