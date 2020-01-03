@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Layout from './Components/Layout';
 import LoginPage from './pages/LoginPage';
 import Inicio from './pages/Inicio';
@@ -15,6 +15,7 @@ const App = () => {
               <Route exact path='/inicio' component={Inicio} />
               <Route exact path='/grupo' component={Grupo} />
               <Route exact path='/privado' component={Privado} />
+              <Redirect from='*' to='/login'/>
             </Switch>
           </Layout>
         </Router>
