@@ -1,18 +1,15 @@
 .login-container {
     box-shadow: 1px 1px 1px 1px grey;
     border-radius: 5px;
-    padding: 20px;
-    text-align: center
+    padding: 5%;
+    text-align: center;
+    height: 490px;
 }
 
 .login-container img {
-    width: 150px;
+    width: 45%;
     border-radius: 10px;
-    margin: 20px
-}
-
-.tipo-parlapp {
-    width: 50px
+    margin: 9%
 }
 
 .form-check-label {
@@ -30,4 +27,8 @@
 
 .btn-primary:hover {
     background-color: rgba(77, 189, 152, 0.623) !important;
+}
+
+.form-group * {
+    overflow: hidden
 }

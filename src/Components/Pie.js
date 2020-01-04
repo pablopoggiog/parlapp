@@ -4,7 +4,7 @@ import './styles/Pie.css';
 const Pie = () => {
     return (
         <div className='pie'>
-            <p className='copy'>Made with️ ❤️ in BsAs © 2019 PabloPoggio</p>
+            <p className='copy'>Made with️ ❤️ in BsAs © 2020 PabloPoggio</p>
         </div>
     )
 }

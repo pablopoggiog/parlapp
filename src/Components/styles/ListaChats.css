@@ -1,0 +1,77 @@
+.lista-container {    
+    box-sizing: border-box;
+    display: grid;
+    text-align: center;
+    grid-gap: 20px;
+    margin: 0 5%;
+    box-shadow: 2px 2px 2px 2px rgba(77, 189, 152, 0.199);
+    padding: 3%;
+    border-radius: 2%;
+    height: 100%;
+    overflow: hidden;
+    background: url('https://cdn1.neolith.com/wp-content/uploads/2018/10/neolith-estatuario-e07.jpg');
+}
+
+.lista-container h1{   
+    color: rgb(77, 189, 152)
+}
+
+.lista-container-chats {
+    display: grid;
+    grid-gap: 0
+}
+
+.chatelement-container {
+    outline: none;
+    text-decoration: none;
+    color: black;
+    padding: 20px auto
+}
+
+.chatelement-container:hover{  
+    outline: none;
+    text-decoration: none;
+    color: grey;  
+    transition: 1500ms;
+    background-color: rgba(211, 211, 211, 0.404)
+}
+
+.chatelement-innercontainer {
+    display: flex;
+    margin: 2%;
+    justify-content: center
+}
+
+.chatelement-container img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 30px
+}
+
+.chatelement-container div {
+    text-align: left
+}
+
+.nombreContacto {
+    font-weight: 500;
+    margin: 0
+}
+
+.ultimoMensaje {
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    font-size: 0.85em;
+    margin: 0
+}
+
+.otroschat-busqueda {
+    background-color: rgba(255, 255, 255, 0.479) !important;
+    max-width: 80%;
+    justify-self: center;
+    text-align: center;
+    align-self: center;
+}

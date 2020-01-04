@@ -1,0 +1,60 @@
+.chatpage-container {
+    width: 100vw;
+    display: grid;
+    grid-template: 1fr / repeat(4, 1fr);
+    grid-template-areas: 'otroschats chatabierto chatabierto chatabierto';    
+}
+
+.otroschats-container {
+    grid-area: otroschats;
+    font-size: 0.8em !important;
+    height: 74vh !important
+}
+
+.chatabierto-container {   
+    grid-area: chatabierto;
+    margin-right: 1%; 
+    box-shadow: 2px 2px 2px 2px rgba(77, 189, 152, 0.199);
+    padding: 0;
+    border-radius: 2%;
+    height: 74vh;
+    display: grid;    
+    grid-template: 60px 1fr 25px / 1fr;
+    grid-template-areas: 'chatabierto-info'
+                         'chatabierto-chat'
+                         'chatabierto-teclado';
+    
+    background-color: rgba(255, 251, 251, 0.719);
+    background: url('https://cdn1.neolith.com/wp-content/uploads/2018/10/neolith-estatuario-e07.jpg');
+    font-size: 0.9em
+}
+
+.chatabierto-info {
+    grid-area: chatabierto-info;
+    padding: 1%;
+    margin: 0.2%;
+    background-color: rgba(77, 189, 152, 0.055);
+    border-radius: 3%;
+}
+
+.chatabierto-info p {
+    font-size: 0.75em;
+}
+
+.chatabierto-chat {
+    grid-area: chatabierto-chat;
+    background: rgba(247, 245, 245, 0.322);
+    overflow: scroll;
+}
+
+.chatabierto-teclado {
+    grid-area: chatabierto-teclado;
+    padding: auto;
+    background-color: rgba(77, 189, 152, 0.096);
+}
+
+.chatabierto-teclado input{    
+    font-size: 0.75em;
+    width: 100%;
+    border-radius: 2%;
+}

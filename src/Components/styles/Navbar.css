@@ -2,4 +2,11 @@
 
 .navbar-brand {
     font-family: 'Pacifico', cursive;
+    color: rgb(77, 189, 152) !important
 }
+
+.navbar {
+    height: 8vh;
+    background: url('https://cdn1.neolith.com/wp-content/uploads/2018/10/neolith-estatuario-e07.jpg');
+}
+

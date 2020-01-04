@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/Login.css';
+import {Link} from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -20,7 +21,7 @@ const Login = () => {
                         <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
                         <label class="form-check-label" for="exampleCheck1">Guardar datos</label>
                     </div>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <Link to='/inicio'><button type="submit" class="btn btn-primary">Entrar</button></Link>
                 </form>
             </div>
         </>
