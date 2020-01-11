@@ -17,7 +17,7 @@ app.use(cors());
 const routes = require('./network/routes');
 
 socket.connect(server);
-routes(app)
+routes(app);
 
 app.use('/app', express.static('public'));
 

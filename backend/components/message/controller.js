@@ -19,8 +19,8 @@ const addMessage = async (chat, user, message) => {
         return fullMessage;
 }
 
-const getMessages = async filterUser => {
-        const lista = await store.list(filterUser);
+const getMessages = async filterChat => {
+        const lista = await store.list(filterChat);
         return lista;
     };
 

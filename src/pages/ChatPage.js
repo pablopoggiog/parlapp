@@ -4,7 +4,7 @@ import Chat from '../Components/Chat';
 
 const ChatPage = props => {
     return (
-        <Chat contacto={props.match.params.contacto}/>
+        <Chat idChat={props.match.params.idChat} nombreContacto={props.match.params.nombreContacto}/>
     )
 }
 

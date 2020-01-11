@@ -10,6 +10,7 @@
     height: 100%;
     overflow: hidden;
     background: url('https://cdn1.neolith.com/wp-content/uploads/2018/10/neolith-estatuario-e07.jpg');
+    opacity: 1
 }
 
 .lista-container h1{   

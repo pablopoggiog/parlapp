@@ -5,7 +5,7 @@ const response = require('../../network/response.js');
 const controller = require('./controller');
 
 messageRouter.get('/', async (req, res) => {
-    const filterMessages = req.query.user || null;
+    const filterMessages = req.query.chat || null;
     try {
         const messageList = await controller.getMessages(filterMessages);
         await response.success(req, res, messageList, 200);

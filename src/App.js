@@ -12,7 +12,7 @@ const App = () => {
             <Switch>
               <Route exact path='/login' component={LoginPage} />
               <Route exact path='/inicio' component={InicioPage} />
-              <Route exact path='/chat/:contacto' component={ChatPage} />
+              <Route exact path='/chat/:idChat/:nombreContacto' component={ChatPage} />
               <Redirect from='*' to='/login'/>
             </Switch>
           </Layout>
