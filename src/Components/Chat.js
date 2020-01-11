@@ -51,6 +51,7 @@ class Chat extends React.Component {
             console.log(await response.data.body);
             this.setState({ listaMensajes: await response.data.body});
             console.log('this.state.listaMensajes: ' + this.state.listaMensajes);
+            document.getElementById('chatabierto-chat').scrollTop=50000000;
         }
         catch(e) {            
             console.error(e)
@@ -99,7 +100,7 @@ class Chat extends React.Component {
                     <div className='chatabierto-info'>
                         <h6>{this.props.nombreContacto}</h6>
                         <p>En linea</p></div>
-                    <div className='chatabierto-chat'>
+                    <div className='chatabierto-chat' id='chatabierto-chat'>
                     <div className='historial-chat-container'>
                         {this.state.listaMensajes.map(mensaje => <Mensaje date={mensaje.date} message={mensaje.message} userId={mensaje.user._id} userVigente={this.state.userVigente} />)}
                     </div>
@@ -119,6 +120,12 @@ class Chat extends React.Component {
 
 const Mensaje = props => {
 
+    const [mostrado, setMostrado] = useState(false);
+
+    useEffect(() => {           
+            setMostrado(true)
+    }, [])
+
     let clase;
     let mensaje;
 
@@ -127,7 +134,7 @@ const Mensaje = props => {
 
     return (
         <>
-            <div className={clase}>
+            <div className={clase} style={mostrado ? {transition: '.31s ease all', visibility: 'visible', transform: 'scale(1)'} : {visibility: 'visible'}} >
                 <div className='cajita-mensaje'>
                     <p>{props.message}</p>
                 </div>

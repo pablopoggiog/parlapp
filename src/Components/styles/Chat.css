@@ -7,6 +7,8 @@
 .mensaje-container{
     margin: auto 15px;
     max-width: 50%;
+	transform: scale(0.1, 0.1);
+	transition: .31s ease all;
 }
 
 .cajita-mensaje{    
