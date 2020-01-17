@@ -1,13 +1,18 @@
 const store = require('./store');
+const bcrypt = require('bcrypt');
 
-const addUser = (name, imgSrc, creationDate) => {
+const addUser = async (name, imgSrc, creationDate, mail, password) => {
     if (!name) {
         return Promise.reject('Invalid user');
     }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
     const user = {
         name,
         imgSrc,
-        creationDate
+        creationDate,
+        mail,
+        password: await hashedPassword
     }
     return store.add(user);
 }
@@ -17,16 +22,16 @@ const getUsers = async filterUser => {
     return lista;
 };
 
-const updateUser = async (id, name, imgSrc) => {
+const updateUser = async (id, name, imgSrc, mail) => {
     if (!id) {
         console.error('Falta indicar id de usuario a modificar');
         return
     }
-    if (!name && !imgSrc) {
+    if (!name && !imgSrc && !mail) {
         console.error('Invalid data');
         return
     }
-    const updateado = await store.update(id, name, imgSrc);
+    const updateado = await store.update(id, name, imgSrc, mail);
     return updateado;
 }
 

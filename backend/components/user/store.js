@@ -8,13 +8,13 @@ const addUser = async user => {
 const getUsers = async filterUser => {
     let filter = {};
     if (filterUser !== null) {
-        filter = {name: filterUser}
+        filter = {mail: filterUser}
     }
     const users = await Model.find(filter);
     return users;
 }
 
-const updateUser = async (id, name, imgSrc) => {
+const updateUser = async (id, name, imgSrc, mail) => {
     const foundUser = await Model.findOne({
         _id: id
     });
@@ -24,6 +24,9 @@ const updateUser = async (id, name, imgSrc) => {
     }
     if (imgSrc) {        
        foundUser.imgSrc = imgSrc;
+    }
+    if (mail) {        
+       foundUser.mail = mail;
     }
     
     console.log(foundUser);
