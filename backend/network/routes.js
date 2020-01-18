@@ -5,10 +5,10 @@ const chatRouter = require('../components/chat/network');
 const apiKeyRouter = require('../components/apiKey/network');
 
 const routes = server => {    
-    server.use('/message', messageRouter);
-    server.use('/user', userRouter);
-    server.use('/chat', chatRouter);
-    server.use('/auth', apiKeyRouter);
+    server.use('/api/message', messageRouter);
+    server.use('/api/user', userRouter);
+    server.use('/api/chat', chatRouter);
+    server.use('/api/auth', apiKeyRouter);
 }
 
 module.exports = routes;

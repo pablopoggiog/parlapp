@@ -28,7 +28,7 @@ userRouter.get('/', async (req, res) => {
 userRouter.patch('/:id', async (req, res) => {
     try {
         console.log(req.params.id);
-        const data = await controller.updateUser(req.params.id, req.body.name, req.body.imgSrc, req.body.mail);
+        const data = await controller.updateUser(req.params.id, req.body.name, req.body.imgSrc, req.body.mail, req.body.password);
         await response.success(req, res, data, 200)
     }
     catch(e) {

@@ -9,6 +9,8 @@ require('../../auth/strategies/basic');
 
 const response = require('../../network/response.js');
 const controller = require('./controller');
+const userController = require('../user/controller');
+const Model = require('../user/model.js')
 
 apiKeyRouter.get('/', async (req, res) => {
     const filterToken = req.query.users || null;
@@ -45,11 +47,11 @@ apiKeyRouter.post('/sign-in', async (req, res, next) => {
                     next(boom.unauthorized());
                 }
 
-                const { _id: id, name, email } = user;
+                const { _id: id, name, mail } = user;
                 const payload = {
                     sub: id, 
                     name, 
-                    email, 
+                    mail, 
                     scopes: apiKey.scopes
                 }
 
@@ -57,12 +59,23 @@ apiKeyRouter.post('/sign-in', async (req, res, next) => {
                     expiresIn: '15m'
                 });
                 
-                return await response.success(req, res, { token, user: { id, name, email } }, 200);
+                return await response.success(req, res, { token, user: { id, name, mail } }, 200);
             })
         } catch(error) {
             next(error);
         }
     })(req, res, next);
+})
+
+
+apiKeyRouter.post('/sign-up', async (req, res, next) => {
+    const {body: user} = req;
+    try {
+        const createdUserId = await userController.addUser(user.name, user.imgSrc, new Date(), user.mail, user.password);
+        response.success(req, res, createdUserId, 201);
+    } catch(e) {
+        next(e);
+    }
 })
 
 module.exports = apiKeyRouter;

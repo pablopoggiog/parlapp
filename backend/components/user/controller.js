@@ -22,16 +22,16 @@ const getUsers = async filterUser => {
     return lista;
 };
 
-const updateUser = async (id, name, imgSrc, mail) => {
+const updateUser = async (id, name, imgSrc, mail, password) => {
     if (!id) {
         console.error('Falta indicar id de usuario a modificar');
         return
     }
-    if (!name && !imgSrc && !mail) {
+    if (!name && !imgSrc && !mail && !password) {
         console.error('Invalid data');
         return
     }
-    const updateado = await store.update(id, name, imgSrc, mail);
+    const updateado = await store.update(id, name, imgSrc, mail, password);
     return updateado;
 }
 

@@ -14,7 +14,7 @@ const getUsers = async filterUser => {
     return users;
 }
 
-const updateUser = async (id, name, imgSrc, mail) => {
+const updateUser = async (id, name, imgSrc, mail, password) => {
     const foundUser = await Model.findOne({
         _id: id
     });
@@ -27,6 +27,9 @@ const updateUser = async (id, name, imgSrc, mail) => {
     }
     if (mail) {        
        foundUser.mail = mail;
+    }
+    if (password) {        
+       foundUser.password = password;
     }
     
     console.log(foundUser);
